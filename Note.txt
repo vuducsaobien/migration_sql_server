@@ -1,0 +1,16 @@
+composer create-project laravel/laravel migration_sql_server
+
+Run sql server
+https://dev.to/mr_steelze/setting-up-a-laravel-project-with-sql-server-and-xampp-wamp-on-windows-3n7k
+
+Download Thank you for downloading Microsoft Drivers for PHP for SQL Server
+SQLSRV40.zip
+
+Copy
+    php_pdo_sqlsrv_74_ts.dll
+    php_sqlsrv_74_ts.dll
+to
+    Php/ext
+Open php.ini
+    extension=php_pdo_sqlsrv_74_ts.dll
+    extension=php_sqlsrv_74_ts.dll
