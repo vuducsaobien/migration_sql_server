@@ -38,3 +38,5 @@ php artisan make:seeder StudentSeeder
 - Run composer
 Php artisan migrate
 php artisan db:seed
+
+// https://fakerphp.github.io/formatters/date-and-time/
