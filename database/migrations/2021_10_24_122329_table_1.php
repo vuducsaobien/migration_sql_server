@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Student extends Migration
+class Table1 extends Migration
 {
-    private $table_db = 'student';
+    private $table_db = 'table_1';
 
     /**
      * Run the migrations.

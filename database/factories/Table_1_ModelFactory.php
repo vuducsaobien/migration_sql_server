@@ -1,16 +1,30 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Models\StudentModel as MainModel;
-use Faker\Generator as Faker;
+use App\Models\Table_1_Model as MainModel;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(MainModel::class, function (Faker $faker) {
+class Table_1_ModelFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = MainModel::class;
 
-    $string_1 = 'Alo';
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $faker    = $this->faker;
+        $string_1 = 'Alo';
 
-    return [
-
+        return [
         // 01.String
         'string_1'  => $faker->name,
         'string_2'  => $faker->regexify('[A-Za-z0-9]{5}'),
@@ -71,6 +85,6 @@ $factory->define(MainModel::class, function (Faker $faker) {
         ], 6, true) ),
 
         'ext_4' => $faker->imageUrl($width = 200, $height = 200),
-
-    ];
-});
+        ];
+    }
+}
