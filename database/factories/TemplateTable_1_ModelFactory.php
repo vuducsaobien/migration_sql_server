@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\Table_1_Model as MainModel;
+use App\Models\TemplateTable_1_Model AS MainModel;
+use App\Models\TemplateTable_2_Model AS SecondModel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class Table_1_ModelFactory extends Factory
+class TemplateTable_1_ModelFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
@@ -23,6 +24,10 @@ class Table_1_ModelFactory extends Factory
     {
         $faker    = $this->faker;
         $string_1 = 'Alo';
+        $ids      = SecondModel::pluck('id')->toArray();
+
+        static $idOne = 1;
+        static $idTwo = 1;
 
         return [
         // 01.String
@@ -37,6 +42,8 @@ class Table_1_ModelFactory extends Factory
         'string_9'  => $faker->phoneNumber,
         'string_10' => $faker->numerify('###-###-####'),
         'string_11' => $faker->numerify('##########'),
+        'string_12' => 'string_12_text',
+        'string_13' => 'string_' . $idOne++ . '_text',
         
         // 02. Number
         'number_3'  => $faker->numberBetween(2, 5),
@@ -48,6 +55,9 @@ class Table_1_ModelFactory extends Factory
         'number_9'  => $faker->randomFloat(),
         'number_10' => $faker->randomFloat(4, 0, 10),
         'number_11' => $faker->randomFloat(1, 0, 13) * 1000,
+        'number_12' => $idTwo++,
+        'number_13' => 13,
+        'number_14' => $faker->randomElement($ids),
 
         // 03. Date Time
         'date_time_1'  => $faker->dateTime(),
@@ -85,6 +95,7 @@ class Table_1_ModelFactory extends Factory
         ], 6, true) ),
 
         'ext_4' => $faker->imageUrl($width = 200, $height = 200),
+
         ];
     }
 }

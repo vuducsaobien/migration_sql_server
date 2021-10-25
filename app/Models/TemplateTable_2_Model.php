@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Table_1_Model extends Model
+class TemplateTable_2_Model extends Model
 {
     use HasFactory;
-    protected $table      = 'table_1';
+    protected $table      = 'TemplateTable_2';
     public    $timestamps = false;
 }

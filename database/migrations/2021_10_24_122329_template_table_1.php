@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Table1 extends Migration
+class TemplateTable1 extends Migration
 {
-    private $table_db = 'table_1';
+    private $table_db = 'TemplateTable_1';
 
     /**
      * Run the migrations.
@@ -29,6 +29,8 @@ class Table1 extends Migration
             $table->string('string_9');
             $table->string('string_10');
             $table->string('string_11');
+            $table->string('string_12');
+            $table->string('string_13');
 
             $table->integer('number_3');
             $table->integer('number_4');
@@ -39,6 +41,9 @@ class Table1 extends Migration
             $table->float('number_9');
             $table->float('number_10');
             $table->float('number_11');
+            $table->integer('number_12');
+            $table->integer('number_13');
+            $table->integer('number_14');
 
             $table->dateTime('date_time_1');
             $table->dateTime('date_time_2', 6);

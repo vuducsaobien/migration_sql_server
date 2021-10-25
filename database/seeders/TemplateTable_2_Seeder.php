@@ -3,12 +3,12 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Table_1_Model as MainModel;
+use App\Models\TemplateTable_2_Model as MainModel;
 
-class Table_1_Seeder extends Seeder
+class TemplateTable_2_Seeder extends Seeder
 {
     // Maybe error with unique Factory
-    private $quantity = 10;
+    private $quantity = 20;
 
     /**
      * Run the database seeds.
