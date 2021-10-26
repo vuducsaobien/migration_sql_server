@@ -24,3 +24,21 @@ GROUP BY parent_id_2
 SElECT parent_id_1, parent_id_2, SUM( number ) AS total FROM table_1
 GROUP BY parent_id_1, parent_id_2
 ORDER BY parent_id_1, parent_id_2
+
+-- DISTINCT
+SELECT DISTINCT first_name
+FROM table_3
+
+SELECT DISTINCT last_name
+FROM table_3
+
+-- Update
+SELECT DISTINCT first_name, last_name
+FROM table_3
+
+-- Check
+SELECT * FROM table_3
+WHERE first_name = 'first_name_1'
+
+SELECT * FROM table_3
+WHERE first_name = 'first_name_3'
