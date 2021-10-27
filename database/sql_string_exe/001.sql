@@ -77,6 +77,8 @@ RIGHT JOIN  table_5
     ON      table_4.id = table_5.customer_id
 
 -- PIVOT
+SELECT * FROM table_5
+
 SELECT 
 	'Value' AS Total_Amount_Per_Customer_Id, 
 	[1], 
@@ -93,3 +95,62 @@ PIVOT
 	SUM(amount)
 	FOR customer_id IN ([1], [2], [3], [4])
 ) AS Pivot_table;
+
+-- PIVOT 02
+SELECT * FROM TemplateTable_3 
+
+--
+SELECT * FROM 
+
+( SELECT * FROM TemplateTable_3 ) AS StudentResults
+
+PIVOT 
+
+(
+    SUM(marks)
+    FOR subject
+    IN 
+    (
+        subject_1,
+        subject_2,
+        subject_3
+    )
+) AS PivotTable
+
+--
+SELECT student, subject_1 FROM 
+
+( SELECT * FROM TemplateTable_3 ) AS StudentResults
+
+PIVOT 
+
+(
+    SUM(marks)
+    FOR subject
+    IN 
+    (
+        subject_1,
+        subject_2,
+        subject_3
+    )
+) AS PivotTable
+
+--
+SELECT * FROM 
+
+( SELECT * FROM TemplateTable_3 ) AS StudentResults
+
+PIVOT 
+
+(
+    SUM(marks)
+    FOR subject
+    IN 
+    (
+        subject_1,
+        subject_2,
+        subject_3
+    )
+) AS PivotTable
+
+WHERE student = 'student_1'
