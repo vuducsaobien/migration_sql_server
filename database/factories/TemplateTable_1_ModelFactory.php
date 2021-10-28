@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TemplateTable_1_ModelFactory extends Factory
 {
+    private static $idOne = 1;
+
     /**
      * The name of the factory's corresponding model.
      *
@@ -26,7 +28,6 @@ class TemplateTable_1_ModelFactory extends Factory
         $string_1 = 'Alo';
         $ids      = SecondModel::pluck('id')->toArray();
 
-        static $idOne = 1;
         static $idTwo = 1;
 
         return [
@@ -43,7 +44,7 @@ class TemplateTable_1_ModelFactory extends Factory
             'string_10' => $faker->numerify('###-###-####'),
             'string_11' => $faker->numerify('##########'),
             'string_12' => 'string_12_text',
-            'string_13' => 'string_' . $idOne++ . '_text',
+            'string_13' => 'string_' . self::$idOne++ . '_text',
             
             // 02. Number
             'number_3'  => $faker->numberBetween(2, 5),

@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Table_3_Seeder::class);
         $this->call(Table_4_Seeder::class);
         $this->call(Table_5_Seeder::class);
-        // $this->call(Table_6_Seeder::class);
+        $this->call(Table_7_Seeder::class);
+        $this->call(Table_6_Seeder::class);
     }
 }
