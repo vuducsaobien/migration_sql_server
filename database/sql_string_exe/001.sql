@@ -154,3 +154,35 @@ PIVOT
 ) AS PivotTable
 
 WHERE student = 'student_1'
+
+-- MERGE 01
+SELECT * FROM table_10
+SELECT * FROM table_11
+
+MERGE table_10
+USING 
+(
+	SELECT 
+		Employee_id, 
+		First_name, 
+		Salary, 
+		Department_id 
+    FROM table_11 
+    WHERE Department_id IN(1, 2, 3, 4, 5)
+) a
+
+ON a.Employee_id = table_10.Employee_id
+--ON a.Salary = table_10.Salary
+
+WHEN MATCHED THEN
+    UPDATE SET 
+		First_name = a.First_name, 
+		Salary     = a.Salary
+
+WHEN NOT MATCHED THEN
+    INSERT VALUES ( 
+	a.Employee_id, 
+	a.First_name, 
+	a.Salary, 
+	a.Department_id);
+
