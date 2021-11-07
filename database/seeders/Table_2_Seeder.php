@@ -8,7 +8,12 @@ use App\Models\Table_2_Model as MainModel;
 class Table_2_Seeder extends Seeder
 {
     // Maybe error with unique Factory
-    private $quantity = 8;
+    private $quantity;
+
+    public function __construct()
+    {
+      $this->quantity = config('settings.seeder_quantity.table_2');
+    }
 
     /**
      * Run the database seeds.
