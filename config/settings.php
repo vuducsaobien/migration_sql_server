@@ -12,6 +12,8 @@ return [
         'table_12' => 3,
         'table_13' => 15,
         'table_14' => 15,
+        'table_15' => 5,
+        'table_16' => 5,
     ]
 ];
 ?>

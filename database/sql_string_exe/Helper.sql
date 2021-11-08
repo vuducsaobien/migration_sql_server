@@ -1,6 +1,6 @@
 -- Drop all Store Procedure
-SELECT 'DROP PROCEDURE [' + SCHEMA_NAME(p.schema_id) + '].[' + p.NAME + '];'
-FROM sys.procedures p 
+-- SELECT 'DROP PROCEDURE [' + SCHEMA_NAME(p.schema_id) + '].[' + p.NAME + '];'
+-- FROM sys.procedures p 
 --https://stackoverflow.com/questions/2610820/how-to-drop-all-stored-procedures-at-once-in-sql-server-database
 
 -- Drop All Tables
@@ -24,3 +24,17 @@ GO
 
 EXEC sp_MSforeachtable 'DROP TABLE ?'
 GO
+
+DROP PROCEDURE [dbo].[procedure_1];
+DROP PROCEDURE [dbo].[procedure_2];
+DROP PROCEDURE [dbo].[procedure_3];
+DROP PROCEDURE [dbo].[procedure_4];
+DROP VIEW [dbo].[view_01];
+DROP FUNCTION [dbo].[getJstDatetime];
+DROP FUNCTION [dbo].[get_function_scalar_01];
+DROP FUNCTION [dbo].[get_function_scalar_02];
+DROP FUNCTION [dbo].[get_function_scalar_03];
+DROP FUNCTION [dbo].[get_function_scalar_04];
+DROP FUNCTION [dbo].[get_function_tabler_01];
+DROP FUNCTION [dbo].[get_function_tabler_02];
+DROP FUNCTION [dbo].[get_function_tabler_03];
