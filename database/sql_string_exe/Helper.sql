@@ -1,7 +1,7 @@
 -- Drop all Store Procedure
 SELECT 'DROP PROCEDURE [' + SCHEMA_NAME(p.schema_id) + '].[' + p.NAME + '];'
 FROM sys.procedures p 
-https://stackoverflow.com/questions/2610820/how-to-drop-all-stored-procedures-at-once-in-sql-server-database
+--https://stackoverflow.com/questions/2610820/how-to-drop-all-stored-procedures-at-once-in-sql-server-database
 
 -- Drop All Tables
 DECLARE @Sql NVARCHAR(500) DECLARE @Cursor CURSOR
