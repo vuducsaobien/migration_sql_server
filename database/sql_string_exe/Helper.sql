@@ -38,3 +38,6 @@ DROP FUNCTION [dbo].[get_function_scalar_04];
 DROP FUNCTION [dbo].[get_function_tabler_01];
 DROP FUNCTION [dbo].[get_function_tabler_02];
 DROP FUNCTION [dbo].[get_function_tabler_03];
+DROP TRIGGER trigger_Insert;
+DROP TRIGGER trigger_Update;
+DROP TRIGGER trigger_Delete;
