@@ -40,3 +40,48 @@ Php artisan migrate
 php artisan db:seed
 
 // https://fakerphp.github.io/formatters/date-and-time/
+
+------------------------------- Queue Laravel -------------------------------
+php artisan server
+QUEUE_CONNECTION=database (.env)
+'default' => env('QUEUE_CONNECTION', 'sync'), (config/queue)
+
+-- Job = write log in storage/logs/laravel.log (Empty now)
+php artisan queue:table
+php artisan migrate
+
+php artisan make:job TestLog
+
+Create IndexController, change route to get IndexController
+Create View - IndexController - Route
+
+-- Action
+-- 01. 
+php artisan server (terminal 1)
+
+http://localhost:8000/job (route web)
+check jobs table (Have 1 record)
+check laravel.log (0 record)
+
+php artisan queue:work (terminal 2)
+check jobs table (Have 0 record)
+check laravel.log (1 record)
+
+http://localhost:8000/job (route web)
+http://localhost:8000/job (route web)
+check jobs table (Have 0 record, Auto Job php artisan queue:work) 
+check laravel.log (3 record)
+
+-- 02. Reset
+php artisan server (terminal 1)
+
+http://localhost:8000/job (route web)
+http://localhost:8000/job (route web)
+http://localhost:8000/job (route web)
+
+check jobs table (Have 3 record)
+check laravel.log (0 record)
+
+php artisan queue:work (terminal 2)
+check jobs table (Have 0 record)
+check laravel.log (3 record)
