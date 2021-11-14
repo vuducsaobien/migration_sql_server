@@ -1,0 +1,43 @@
+composer create-project laravel/laravel migration_sql_server
+
+Run sql server
+https://dev.to/mr_steelze/setting-up-a-laravel-project-with-sql-server-and-xampp-wamp-on-windows-3n7k
+
+Download Thank you for downloading Microsoft Drivers for PHP for SQL Server
+SQLSRV40.zip
+
+Cài đặt PATH Enviroments PHP cho folder chứa 2 file này.
+Include User & Systems Enviroments
+PATH: C:\xampp_74\php
+
+Copy
+    php_pdo_sqlsrv_74_ts.dll
+    php_sqlsrv_74_ts.dll
+to
+    Php/ext
+Open php.ini
+    extension=php_pdo_sqlsrv_74_ts.dll
+    extension=php_sqlsrv_74_ts.dll
+
+Download and Install Microsoft ODBC Driver 17 for SQL Server (x64)
+
+Edit .env
+Edit config/database.php => default mysql => sqlsrv
+
+Sql server configuration manager
+    Sql server Network configuration
+        Protocols for MSSQLSERVER
+            TCP/IP Enable
+
+- Create Migration files
+php artisan make:model StudentModel
+php artisan make:migration student
+php artisan make:factory StudentFactory
+php artisan make:seeder StudentSeeder
+
+- Run composer
+Php artisan migrate
+php artisan db:seed
+
+// https://fakerphp.github.io/formatters/date-and-time/
+

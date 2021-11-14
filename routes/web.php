@@ -18,3 +18,6 @@ use App\Http\Controllers\QueueController;
 
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/job', [QueueController::class, 'index']);
+
+Route::get('/queue', [QueueController::class, 'form']);
+Route::get('/post-data{first_name?}/{last_name?}', [QueueController::class, 'form'])->name('queue/form');

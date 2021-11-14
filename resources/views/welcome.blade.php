@@ -52,7 +52,7 @@
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
 
-                    {{-- <form method="POST" action= {{ route("queue/form") }}>
+                    <form method="GET" action= {{ route("queue/form") }}>
                         <label for="first_name">First name:</label><br>
                         <input type="text" id="first_name" name="first_name"><br>
 
@@ -60,7 +60,7 @@
                         <input type="text" id="last_name" name="last_name">
 
                         <input type="submit" value="Submit">
-                    </form> --}}
+                    </form>
 
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="p-6">
