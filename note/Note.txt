@@ -4,6 +4,8 @@ Run sql server
 https://dev.to/mr_steelze/setting-up-a-laravel-project-with-sql-server-and-xampp-wamp-on-windows-3n7k
 
 Download Thank you for downloading Microsoft Drivers for PHP for SQL Server
+https://github.com/Microsoft/msphpsql/releases
+Windows-7.4.zip
 SQLSRV40.zip
 
 Cài đặt PATH Enviroments PHP cho folder chứa 2 file này.
@@ -20,6 +22,7 @@ Open php.ini
     extension=php_sqlsrv_74_ts.dll
 
 Download and Install Microsoft ODBC Driver 17 for SQL Server (x64)
+https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15
 
 Edit .env
 Edit config/database.php => default mysql => sqlsrv
@@ -28,6 +31,10 @@ Sql server configuration manager
     Sql server Network configuration
         Protocols for MSSQLSERVER
             TCP/IP Enable
+
+            IpAll
+            TCP Dynamic Ports
+            TCP Port          1433
 
 - Create Migration files
 php artisan make:model StudentModel
